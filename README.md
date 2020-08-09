@@ -8,7 +8,7 @@ Original project https://github.com/yar229/WebDavMailRuCloud
 
 # Usage
 
-Default run on port 8888:
+Default run on port 8888 (with option -p8888):
 
 ```bash
 docker run -d -p8888:8888 mrlioncub/wdmrc
@@ -16,10 +16,11 @@ docker run -d -p8888:8888 mrlioncub/wdmrc
 and example mount in linux:
 
 ```bash
+echo use_locks 0 | sudo tee -a /etc/davfs2/davfs2.conf
+echo http://127.0.0.1:8888 /mnt davfs user,rw,noauto 0 0 | sudo tee -a /etc/fstab
 mkdir ~/.davfs2
 echo 'http://127.0.0.1:8888 <login>@mail.ru <password>' > ~/.davfs2/secrets
 chmod 600 ~/.davfs2/secrets
-echo http://127.0.0.1:8888 /mnt davfs user,rw,noauto 0 0 | sudo tee -a /etc/fstab
 mount /mnt
 ```
 
@@ -34,4 +35,5 @@ docker run -d -p8080:8080 mrlioncub/wdmrc -p 8080 --cache-listing-depth 2
 
 # Links
 https://github.com/yar229/WebDavMailRuCloud  
-http://manpages.ubuntu.com/manpages/trusty/man8/mount.davfs.8.html
+http://manpages.ubuntu.com/manpages/trusty/man8/mount.davfs.8.html  
+https://wiki.archlinux.org/index.php/Davfs2#Creating/copying_files_not_possible_and/or_freezes
