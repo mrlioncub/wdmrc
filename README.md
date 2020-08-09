@@ -17,7 +17,7 @@ and example mount in linux:
 
 ```bash
 echo use_locks 0 | sudo tee -a /etc/davfs2/davfs2.conf
-echo http://127.0.0.1:8888 /mnt davfs user,rw,noauto 0 0 | sudo tee -a /etc/fstab
+echo http://127.0.0.1:8888 /mnt davfs user,rw,_netdev,noauto 0 0 | sudo tee -a /etc/fstab
 mkdir ~/.davfs2
 echo 'http://127.0.0.1:8888 <login>@mail.ru <password>' > ~/.davfs2/secrets
 chmod 600 ~/.davfs2/secrets
