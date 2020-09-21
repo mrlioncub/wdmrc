@@ -1,9 +1,9 @@
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
 
 LABEL maintainer="mr.lioncub" \
-    release-date="2020–09–05"
+    release-date="2020–09–21"
 
-ARG WDMRC_VERSION=1.11.0.31
+ARG WDMRC_VERSION=1.12.0.0
 
 WORKDIR /wdmrc
 
