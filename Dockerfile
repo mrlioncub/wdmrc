@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
 
 LABEL maintainer="mr.lioncub"
 
-ARG WDMRC_VERSION=1.13.0.2
+ARG WDMRC_VERSION=1.13.0.5
 
 WORKDIR /wdmrc
 
